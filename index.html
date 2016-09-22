@@ -364,11 +364,14 @@ Remember — a happy kitten is an authenticated kitten!
 <h2 id="prerequisites">Prerequisites</h2>
 
 <p>In order to publish to slate you will need the following:
-* Linux or OSX (Cygwin or Bash for Windows may work but your mileage may vary)
-* Ruby
-* Git
-* A local slate installation (Installation instructions can be found <a href="https://github.com/Go4Algorithms/docs/wiki/Installing-Slate">here</a>)
-* A programming text editor (vim, Sublime Text, Atom, etc)</p>
+* Linux or OSX (Cygwin or Bash for Windows may work but your mileage may vary)</p>
+
+<ul>
+<li><p>Ruby</p></li>
+<li><p>Git</p></li>
+<li><p>A local slate installation (Installation instructions can be found <a href="https://github.com/Go4Algorithms/docs/wiki/Installing-Slate">here</a>)</p></li>
+<li><p>A programming text editor (vim, Sublime Text, Atom, etc)</p></li>
+</ul>
 
 <h2 id="writing-documentation">Writing documentation</h2>
 
@@ -378,19 +381,19 @@ Remember — a happy kitten is an authenticated kitten!
 
 <p>Once you clone it, navigate to /source/includes and create a markdown file. Make sure the file is in the format <code class="prettyprint">_filename.md</code>. From here you can edit the file and save when you are done. After you are done, go up to the /source directory and edit the <code class="prettyprint">index.html.md</code> file, here add the filename (without the underscore and <code class="prettyprint">.md</code> extension) under <code class="prettyprint">-includes:</code> (it&rsquo;s at the very top, you can&rsquo;t miss it).</p>
 
-<p>Once you are done editing the file commit and push the code to the repository.
-<code class="prettyprint">shell
-git add -A
-git add -m &quot;your message here&quot;
+<p>Once you are done editing the file commit and push the code to the repository.</p>
+<pre class="highlight shell"><code>git add -A
+git add -m <span class="s2">"your message here"</span>
 git push
-</code>
-You will be prompted to enter you credentials, go ahead and enter them.</p>
+</code></pre>
 
-<p>At this point your code is pushed to the repository however it is not <em>published</em> yet. Go back to /source and in the terminal execute <code class="prettyprint">deploy.sh</code>
-<code class="prettyprint">shell
-./deploy.sh
-</code>
-This script will publish the changes you have made. After that you should be able to go to <a href="http://go4algorithms.github.io/docs">g4algorithms.github.io/docs</a> and see your changes.</p>
+<p>You will be prompted to enter you credentials, go ahead and enter them.</p>
+
+<p>At this point your code is pushed to the repository however it is not <em>published</em> yet. Go back to /source and in the terminal execute <code class="prettyprint">deploy.sh</code></p>
+<pre class="highlight shell"><code>./deploy.sh
+</code></pre>
+
+<p>This script will publish the changes you have made. After that you should be able to go to <a href="http://go4algorithms.github.io/docs">g4algorithms.github.io/docs</a> and see your changes.</p>
 
       </div>
       <div class="dark-box">
