@@ -1,4 +1,4 @@
-# Publishing Documentation to Slate
+# Publishing Documentation
 
 This guide is intended for any team member wishing to publish documentation to our documentation page [g4algorithms.github.io/docs](http://go4algorithms.github.io/docs). If you need any help please contact Sunny Golovine at aa05880@georgiasouthern.edu.
 
