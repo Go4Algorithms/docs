@@ -12,6 +12,19 @@ In order to publish to slate you will need the following:
 
 * A local slate installation (Installation instructions can be found [here](https://github.com/Go4Algorithms/docs/wiki/Installing-Slate))
 
+```shell
+
+git clone https://github.com/Go4Algorithms/docs.git
+
+cd docs
+
+bundle install
+
+bundle exec middleman server
+
+
+```
+
 * A programming text editor (vim, Sublime Text, Atom, etc)
 
 ## Writing documentation
