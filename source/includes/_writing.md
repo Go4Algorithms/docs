@@ -21,7 +21,8 @@ Once you clone it, navigate to /source/includes and create a markdown file. Make
 
 Once you are done editing the file commit and push the code to the repository.
 ```shell
-git add -a -m "your message here"
+git add -A
+git add -m "your message here"
 git push
 ```
 You will be prompted to enter you credentials, go ahead and enter them.
@@ -30,4 +31,4 @@ At this point your code is pushed to the repository however it is not *published
 ```shell
 ./deploy.sh
 ```
-This script will publish the changes you have made. After that you should be able to go to [g4algorithms.github.io/docs](http://go4algorithms.github.io/docs) and see your changes. 
+This script will publish the changes you have made. After that you should be able to go to [g4algorithms.github.io/docs](http://go4algorithms.github.io/docs) and see your changes.

@@ -14,6 +14,8 @@ toc_footers:
 includes:
   - errors
   - foo
+  - jacob
+  - writing
 
 search: true
 ---
