@@ -356,6 +356,42 @@ Remember — a happy kitten is an authenticated kitten!
 
 <p>baz</p>
 
+          
+          <h1 id="publishing-documentation-to-slate">Publishing Documentation to Slate</h1>
+
+<p>This guide is intended for any team member wishing to publish documentation to our documentation page <a href="http://go4algorithms.github.io/docs">g4algorithms.github.io/docs</a>. If you need any help please contact Sunny Golovine at aa05880@georgiasouthern.edu.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>In order to publish to slate you will need the following:
+* Linux or OSX (Cygwin or Bash for Windows may work but your mileage may vary)
+* Ruby
+* Git
+* A local slate installation (Installation instructions can be found <a href="https://github.com/Go4Algorithms/docs/wiki/Installing-Slate">here</a>)
+* A programming text editor (vim, Sublime Text, Atom, etc)</p>
+
+<h2 id="writing-documentation">Writing documentation</h2>
+
+<p>You want to start by cloning our fork of slate</p>
+<pre class="highlight shell"><code>git clone https://github.com/Go4Algorithms/docs.git
+</code></pre>
+
+<p>Once you clone it, navigate to /source/includes and create a markdown file. Make sure the file is in the format <code class="prettyprint">_filename.md</code>. From here you can edit the file and save when you are done. After you are done, go up to the /source directory and edit the <code class="prettyprint">index.html.md</code> file, here add the filename (without the underscore and <code class="prettyprint">.md</code> extension) under <code class="prettyprint">-includes:</code> (it&rsquo;s at the very top, you can&rsquo;t miss it).</p>
+
+<p>Once you are done editing the file commit and push the code to the repository.
+<code class="prettyprint">shell
+git add -A
+git add -m &quot;your message here&quot;
+git push
+</code>
+You will be prompted to enter you credentials, go ahead and enter them.</p>
+
+<p>At this point your code is pushed to the repository however it is not <em>published</em> yet. Go back to /source and in the terminal execute <code class="prettyprint">deploy.sh</code>
+<code class="prettyprint">shell
+./deploy.sh
+</code>
+This script will publish the changes you have made. After that you should be able to go to <a href="http://go4algorithms.github.io/docs">g4algorithms.github.io/docs</a> and see your changes.</p>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
