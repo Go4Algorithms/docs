@@ -52,3 +52,14 @@ At this point your code is pushed to the repository however it is not *published
 ```
 This script will publish the changes you have made. After that you should be able to go to [g4algorithms.github.io/docs](http://go4algorithms.github.io/docs) and see your changes.
 
+## Tips:
+
+
+- Don't forget to add your article to index.html.md. Otherwise the article won't be published
+
+```shell
+# Some Sample code
+# Some more code
+# yet even more code
+```
+- If you have an accompanying code, add it *before* the article, that way it will show up beside the article
