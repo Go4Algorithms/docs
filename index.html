@@ -171,6 +171,66 @@ git push
 
 <p>This script will publish the changes you have made. After that you should be able to go to <a href="http://go4algorithms.github.io/docs">g4algorithms.github.io/docs</a> and see your changes.</p>
 
+          <h1 id="generating-data">Generating Data</h1>
+
+<p>This script will generate 3 files with a desired number of integers. The script accepts a command line arguments and can be executed using <code class="prettyprint">python gen_data.py n</code> where <code class="prettyprint">n</code> is the desired size of the data set.</p>
+
+<p>The script will output three files, <code class="prettyprint">best_case.txt</code>, <code class="prettyprint">avg_case.txt</code> and <code class="prettyprint">worst case.txt</code>. Best case arranges the numbers from 0 to (n - 1), average case fills the text file with n random integers and worst case has the order (n - 1) to 0</p>
+
+<p>The script can be found <a href="https://github.com/Go4Algorithms/python/blob/master/data_generation/gen_data.py">here</a></p>
+<pre class="highlight python"><code>
+<span class="c">#!/usr/bin/env python</span>
+
+<span class="c"># Sunny Golovine</span>
+<span class="c"># sunny@golovinemail.org</span>
+<span class="c"># golovine.org</span>
+
+<span class="c"># This script will generate a data set of a set length</span>
+<span class="c"># You can generate either worse case data (descending data set),</span>
+<span class="c"># best case data set (ascending data set)</span>
+<span class="c"># or an average case data set (random data set)</span>
+
+<span class="c"># Each function takes a size argument and will generate a data set</span>
+<span class="c"># with the given length</span>
+
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">best_case</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'best_case.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">avg_case</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'avg_case.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9999999</span><span class="p">))</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">worst_case</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'worst_case.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c"># Wrapper for all functions</span>
+<span class="k">def</span> <span class="nf">gen</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">best_case</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+    <span class="n">avg_case</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+    <span class="n">worst_case</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">arg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">gen</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+
+
+</code></pre>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
