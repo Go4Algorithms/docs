@@ -9,6 +9,7 @@ language_tabs:
 
 includes:
   - writing
+  - datagen
 
 search: true
 ---

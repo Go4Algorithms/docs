@@ -1,14 +1,10 @@
 # Generating Data
 
-This script will generate 3 files with a desired number of integers. The script accepts a command line arguments and can be executed using `python gen_data.py n` where `n` is the desired size of the data set.
-
-The script will output three files, `best_case.txt`, `avg_case.txt` and `worst case.txt`. Best case arranges the numbers from 0 to (n - 1), average case fills the text file with n random integers and worst case has the order (n - 1) to 0
-
-The script can be found [here](https://github.com/Go4Algorithms/python/blob/master/data_generation/gen_data.py)
-
 ```python
 
 #!/usr/bin/env python
+
+# gen_data.py
 
 # Sunny Golovine
 # sunny@golovinemail.org
@@ -59,3 +55,9 @@ if __name__ == "__main__":
 
 
 ```
+
+This script will generate 3 files with a desired number of integers. The script accepts a command line arguments and can be executed using `python gen_data.py n` where `n` is the desired size of the data set.
+
+The script will output three files, `best_case.txt`, `avg_case.txt` and `worst case.txt`. Best case arranges the numbers from 0 to (n - 1), average case fills the text file with n random integers and worst case has the order (n - 1) to 0
+
+The script can be found [here](https://github.com/Go4Algorithms/python/blob/master/data_generation/gen_data.py)
