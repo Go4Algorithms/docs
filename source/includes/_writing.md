@@ -62,4 +62,4 @@ This script will publish the changes you have made. After that you should be abl
 # Some more code
 # yet even more code
 ```
-- If you have an accompanying code, add it *before* the article, that way it will show up beside the article
+- If you have an accompanying code, add it *before* the article, that way it will show up beside the article (the code on the left was added before this line)
