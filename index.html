@@ -255,7 +255,7 @@ git push
 
 <p>The complexity preprocessor modifies the code submitted by the user so that the standard playground engine returns coordinate pairs mapping n-values to the time it takes the function to complete. This data will later be graphed using GoNum</p>
 
-<p>The preprocessor reads code in through standard input and writes to standard output. The basic example provided uses the following steps to modify code: </p>
+<p>The preprocessor reads code in through standard input and writes to standard output. The basic example provided uses the following steps to modify code:</p>
 
 <ol>
 <li>Splits the code at each function declaration to obtain an array of functions</li>
@@ -267,30 +267,32 @@ git push
 
 <h3 id="setup-instructions">Setup instructions:</h3>
 
-<p>In order to test this you will need a working Go playground docker setup.<br>
-&ldquo;<code class="prettyprint">bash
-git clone https://github.com/golang/playground.git</code>
-cd playground</p>
-
-<h1 id="you-may-need-to-modify-sandbox-dockerfile-by-adding-the-following-lines-uncommented">You may need to modify sandbox/DockerFile by adding the following lines (uncommented)</h1>
-
-<h1 id="at-line-45-before-quot-add-and-compile-tour-packages-quot">at line 45 before &rdquo;# Add and compile tour packages&quot;</h1>
-
-<h1 id="run-apt-get-update">RUN apt-get update</h1>
-
-<h1 id="run-apt-get-install-y-ca-certificates">RUN apt-get install -y ca-certificates</h1>
-
-<p>docker build -t sandbox sandbox/
+<p>In order to test this you will need a working Go playground docker setup.</p>
+<pre class="highlight shell"><code>
+git clone https://github.com/golang/playground.git<span class="sb">`</span>
+<span class="nb">cd </span>playground
+<span class="c"># You may need to modify sandbox/DockerFile by adding the following lines (uncommented)</span>
+<span class="c"># at line 45 before "# Add and compile tour packages"</span>
+<span class="c"># RUN apt-get update</span>
+<span class="c"># RUN apt-get install -y ca-certificates</span>
+docker build -t sandbox sandbox/
 docker run -d -p 8080:8080 sandbox
-cd sandbox 
+<span class="nb">cd </span>sandbox
 wget https://gist.githubusercontent.com/jposton96a/3a5017ea5e63df397c2cece08f6f1d9e/raw/8ca9e34070874cb0d935227fdd129ef56b3c8feb/processor.go
-&ldquo;`</p>
 
-<p>Now you should be able to test running and compiling code through the docker environment:<br>
-<code class="prettyprint">cat /path/to/code.go | go run ./sandbox/client.go | curl --data @- 172.17.0.1:8080/compile</code></p>
+</code></pre>
 
-<p>Now, in order to use the preprocessor, simply run the code through processor.go before passing it to the playground client:<br>
-<code class="prettyprint">cat /path/to/code.go | go run ./sandbox/processor.go | go run ./sandbox/client.go | curl --data @- 172.17.0.1:8080/compile</code></p>
+<p>Now you should be able to test running and compiling code through the docker environment:</p>
+<pre class="highlight shell"><code>
+cat /path/to/code.go | go run ./sandbox/client.go | curl --data @- 172.17.0.1:8080/compile
+
+</code></pre>
+
+<p>Now, in order to use the preprocessor, simply run the code through processor.go before passing it to the playground client:</p>
+<pre class="highlight shell"><code>
+cat /path/to/code.go | go run ./sandbox/processor.go | go run ./sandbox/client.go | curl --data @- 172.17.0.1:8080/compile
+
+</code></pre>
 
       </div>
       <div class="dark-box">
