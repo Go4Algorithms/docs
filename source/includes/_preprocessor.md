@@ -31,8 +31,17 @@ wget https://gist.githubusercontent.com/jposton96a/3a5017ea5e63df397c2cece08f6f1
 ```
 
 Now you should be able to test running and compiling code through the docker environment:
-`cat /path/to/code.go | go run ./sandbox/client.go | curl --data @- 172.17.0.1:8080/compile`
+
+```bash
+
+cat /path/to/code.go | go run ./sandbox/client.go | curl --data @- 172.17.0.1:8080/compile
+
+```
 
 Now, in order to use the preprocessor, simply run the code through processor.go before passing it to the playground client:
-`cat /path/to/code.go | go run ./sandbox/processor.go | go run ./sandbox/client.go | curl --data @- 172.17.0.1:8080/compile`
 
+```bash
+
+cat /path/to/code.go | go run ./sandbox/processor.go | go run ./sandbox/client.go | curl --data @- 172.17.0.1:8080/compile
+
+```
