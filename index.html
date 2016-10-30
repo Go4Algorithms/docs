@@ -307,8 +307,6 @@ cat /path/to/code.go | go run ./sandbox/processor.go | go run ./sandbox/client.g
 </ul>
 
 <h2 id="setting-up-the-official-go-playground">Setting up the official Go Playground</h2>
-
-<p>This will setup the backend for the official go playground</p>
 <pre class="highlight shell"><code>
 git clone https://github.com/Go4Algorithms/playground.git
 <span class="nb">cd </span>playground
@@ -317,11 +315,11 @@ docker run -d -p 8080:8080 sandbox <span class="c"># Run the image as a containe
 
 </code></pre>
 
+<p>This will setup the backend for the official go playground</p>
+
 <p><em>NOTE: For the official playground, setting up the frontend is still under investigation</em></p>
 
 <h2 id="setting-up-unofficial-go-playground-w-frontend">Setting up unofficial Go playground w/ frontend</h2>
-
-<p>This will setup a custom playground with a frontend. It should be noted that there are some changes in how data is handled here so curl requests that work on the official version of the playground will not work with this fork. This version comes with a makefile for the various components so compiling should be fairly straightforward.</p>
 <pre class="highlight shell"><code>
 git clone https://github.com/Go4Algorithms/go-playground.git
 
@@ -337,6 +335,8 @@ go build
 <span class="c"># Webapp requires the backend sandbox to be running on port 8080</span>
 
 </code></pre>
+
+<p>This will setup a custom playground with a frontend. It should be noted that there are some changes in how data is handled here so curl requests that work on the official version of the playground will not work with this fork. This version comes with a makefile for the various components so compiling should be fairly straightforward.</p>
 
 <p>More information on setting up the custom sandbox can be found at: https://github.com/Go4Algorithms/go-playground  </p>
 
