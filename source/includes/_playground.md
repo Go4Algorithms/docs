@@ -10,8 +10,6 @@ This guide outlines how to setup the official Go playground (backend) and a modi
 
 ## Setting up the official Go Playground
 
-This will setup the backend for the official go playground
-
 ```bash
 
 git clone https://github.com/Go4Algorithms/playground.git
@@ -21,11 +19,11 @@ docker run -d -p 8080:8080 sandbox # Run the image as a container
 
 ```
 
+This will setup the backend for the official go playground
+
 *NOTE: For the official playground, setting up the frontend is still under investigation*
 
 ## Setting up unofficial Go playground w/ frontend
-
-This will setup a custom playground with a frontend. It should be noted that there are some changes in how data is handled here so curl requests that work on the official version of the playground will not work with this fork. This version comes with a makefile for the various components so compiling should be fairly straightforward.
 
 ```bash
 
@@ -43,4 +41,8 @@ go build
 # Webapp requires the backend sandbox to be running on port 8080
 
 ```
+
+This will setup a custom playground with a frontend. It should be noted that there are some changes in how data is handled here so curl requests that work on the official version of the playground will not work with this fork. This version comes with a makefile for the various components so compiling should be fairly straightforward.
+
+
 More information on setting up the custom sandbox can be found at: https://github.com/Go4Algorithms/go-playground  
