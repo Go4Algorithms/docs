@@ -11,6 +11,7 @@ includes:
   - writing
   - datagen
   - preprocessor
+  - playground
 
 search: true
 ---
